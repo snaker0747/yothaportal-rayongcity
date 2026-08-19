@@ -1,6 +1,6 @@
 /**
  * Application Logic & Dynamic Card Rendering - Mobile & Tablet Optimized
- * ศูนย์รวมระบบงาน ฝ่ายสาธารณูปโภค ส่วนการโยธา สำนักการช่าง เทศบาลนครระยอง
+ * ศูนย์รวมระบบงาน ฝ่ายสาธารณูปโภค ส่วนการโยธา สำนักช่าง เทศบาลนครระยอง
  */
 
 document.addEventListener('DOMContentLoaded', () => {
