@@ -1,13 +1,19 @@
 /**
- * Application Logic & Dynamic Card Rendering - Mobile & Tablet Optimized
+ * Application Logic & PIN Security Authentication - Mobile & Tablet Optimized
  * ศูนย์รวมระบบงาน ฝ่ายสาธารณูปโภค ส่วนการโยธา สำนักช่าง เทศบาลนครระยอง
  */
+
+// Secret PIN Code
+const CORRECT_PIN = "888888";
+const AUTH_STORAGE_KEY = "rayong_portal_auth_session";
 
 document.addEventListener('DOMContentLoaded', () => {
   // State management
   let activeCategory = 'all';
   let searchQuery = '';
   let pinnedIds = JSON.parse(localStorage.getItem('rayong_pinned_systems') || '[]');
+  let currentPin = '';
+  let isAuthenticating = false;
 
   // DOM Elements
   const searchInput = document.getElementById('search-input');
@@ -17,17 +23,190 @@ document.addEventListener('DOMContentLoaded', () => {
   const systemCountBadge = document.getElementById('system-count-badge');
   const emptyState = document.getElementById('empty-state');
 
+  // PIN Login Elements
+  const pinOverlay = document.getElementById('pin-overlay');
+  const pinBoxesContainer = document.getElementById('pin-boxes');
+  const pinBoxes = document.querySelectorAll('.pin-digit-box');
+  const pinErrorMessage = document.getElementById('pin-error-message');
+  const keypadButtons = document.querySelectorAll('.keypad-btn');
+  const logoutBtn = document.getElementById('logout-btn');
+
   // Initialize
   initApp();
 
   function initApp() {
+    checkAuthStatus();
     renderCategories();
     renderSystems();
     setupEventListeners();
+    setupPinSecurity();
     updateLiveTime();
   }
 
-  // Setup Event Listeners
+  // =========================================================================
+  // PIN Code Security Logic (PIN: 888888)
+  // =========================================================================
+  function checkAuthStatus() {
+    const isAuthenticated = sessionStorage.getItem(AUTH_STORAGE_KEY) === 'true';
+    if (isAuthenticated) {
+      hidePinOverlay(false);
+    } else {
+      showPinOverlay();
+    }
+  }
+
+  function showPinOverlay() {
+    if (!pinOverlay) return;
+    currentPin = '';
+    updatePinDisplay();
+    pinOverlay.classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
+    if (pinErrorMessage) pinErrorMessage.classList.add('hidden');
+  }
+
+  function hidePinOverlay(animated = true) {
+    if (!pinOverlay) return;
+    if (animated) {
+      pinOverlay.classList.add('animate-unlock');
+      setTimeout(() => {
+        pinOverlay.classList.add('hidden');
+        pinOverlay.classList.remove('animate-unlock');
+        document.body.classList.remove('overflow-hidden');
+      }, 350);
+    } else {
+      pinOverlay.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+  }
+
+  function setupPinSecurity() {
+    // Keypad Click Event
+    keypadButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const digit = btn.getAttribute('data-digit');
+        const action = btn.getAttribute('data-action');
+
+        if (action === 'delete') {
+          handlePinDelete();
+        } else if (action === 'clear') {
+          handlePinClear();
+        } else if (digit !== null) {
+          handlePinInput(digit);
+        }
+      });
+    });
+
+    // Hardware Keyboard Input
+    window.addEventListener('keydown', (e) => {
+      // Only process when PIN overlay is visible
+      if (pinOverlay && !pinOverlay.classList.contains('hidden')) {
+        if (e.key >= '0' && e.key <= '9') {
+          e.preventDefault();
+          handlePinInput(e.key);
+        } else if (e.key === 'Backspace') {
+          e.preventDefault();
+          handlePinDelete();
+        } else if (e.key === 'Escape') {
+          e.preventDefault();
+          handlePinClear();
+        }
+      }
+    });
+
+    // Logout / Lock Button
+    if (logoutBtn) {
+      logoutBtn.addEventListener('click', () => {
+        sessionStorage.removeItem(AUTH_STORAGE_KEY);
+        showToast('🔒 ล็อกระบบเรียบร้อยแล้ว');
+        showPinOverlay();
+      });
+    }
+  }
+
+  function handlePinInput(digit) {
+    if (isAuthenticating || currentPin.length >= 6) return;
+    currentPin += digit;
+    updatePinDisplay();
+
+    if (currentPin.length === 6) {
+      verifyPin();
+    }
+  }
+
+  function handlePinDelete() {
+    if (isAuthenticating || currentPin.length === 0) return;
+    currentPin = currentPin.slice(0, -1);
+    updatePinDisplay();
+    if (pinErrorMessage) pinErrorMessage.classList.add('hidden');
+  }
+
+  function handlePinClear() {
+    if (isAuthenticating) return;
+    currentPin = '';
+    updatePinDisplay();
+    if (pinErrorMessage) pinErrorMessage.classList.add('hidden');
+  }
+
+  function updatePinDisplay() {
+    pinBoxes.forEach((box, index) => {
+      if (index < currentPin.length) {
+        box.classList.add('filled');
+        box.innerHTML = `<span>●</span>`;
+      } else {
+        box.classList.remove('filled');
+        box.innerHTML = '';
+      }
+
+      if (index === currentPin.length) {
+        box.classList.add('active-focus');
+      } else {
+        box.classList.remove('active-focus');
+      }
+    });
+  }
+
+  function verifyPin() {
+    isAuthenticating = true;
+
+    if (currentPin === CORRECT_PIN) {
+      // Success!
+      sessionStorage.setItem(AUTH_STORAGE_KEY, 'true');
+      if (pinErrorMessage) pinErrorMessage.classList.add('hidden');
+      
+      // Visual feedback
+      pinBoxes.forEach(box => {
+        box.classList.add('bg-[#B9FF66]');
+      });
+
+      setTimeout(() => {
+        hidePinOverlay(true);
+        showToast('✅ ปลดล็อกระบบสำเร็จ ยินดีต้อนรับ');
+        isAuthenticating = false;
+      }, 250);
+
+    } else {
+      // Failed PIN
+      setTimeout(() => {
+        if (pinErrorMessage) {
+          pinErrorMessage.classList.remove('hidden');
+        }
+        if (pinBoxesContainer) {
+          pinBoxesContainer.classList.add('animate-shake');
+          setTimeout(() => {
+            pinBoxesContainer.classList.remove('animate-shake');
+          }, 500);
+        }
+        currentPin = '';
+        updatePinDisplay();
+        isAuthenticating = false;
+      }, 200);
+    }
+  }
+
+  // =========================================================================
+  // Standard App Event Listeners & Search
+  // =========================================================================
   function setupEventListeners() {
     // Search input
     if (searchInput) {
@@ -66,26 +245,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Add System Modal
-    const addSystemModalBtn = document.getElementById('add-system-modal-btn');
-    const addSystemModal = document.getElementById('add-system-modal');
-    const closeAddModal = document.getElementById('close-add-modal');
-
-    if (addSystemModalBtn && addSystemModal) {
-      addSystemModalBtn.addEventListener('click', () => addSystemModal.classList.remove('hidden'));
-      if (closeAddModal) closeAddModal.addEventListener('click', () => addSystemModal.classList.add('hidden'));
-      addSystemModal.addEventListener('click', (e) => {
-        if (e.target === addSystemModal) addSystemModal.classList.add('hidden');
-      });
-    }
-
-    // Keyboard shortcut (Escape to close modals, / to search)
+    // Keyboard shortcut (Escape to close modal, / to search)
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         if (helpModal) helpModal.classList.add('hidden');
-        if (addSystemModal) addSystemModal.classList.add('hidden');
       }
-      if (e.key === '/' && document.activeElement !== searchInput) {
+      if (e.key === '/' && document.activeElement !== searchInput && (!pinOverlay || pinOverlay.classList.contains('hidden'))) {
         e.preventDefault();
         searchInput.focus();
       }
@@ -146,7 +311,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Open System Link Handler
   window.openSystem = function(url, event) {
-    // Only trigger if click wasn't on button or specific sub-elements
     if (event.target.closest('button') || event.target.closest('a')) {
       return;
     }
@@ -159,10 +323,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Filter systems
     let filtered = systemsData.filter(system => {
-      // Category filter
       const matchesCategory = (activeCategory === 'all') || (system.category === activeCategory);
-
-      // Search filter
       const matchesSearch = (
         searchQuery === '' ||
         system.title.toLowerCase().includes(searchQuery) ||

@@ -1,6 +1,6 @@
 /* ==========================================================================
    Positivus Design System Stylesheet - Fully Responsive for Mobile & Tablet
-   ศูนย์รวมระบบงาน ฝ่ายสาธารณูปโภค ส่วนการโยธา สำนักการช่าง เทศบาลนครระยอง
+   ศูนย์รวมระบบงาน ฝ่ายสาธารณูปโภค ส่วนการโยธา สำนักช่าง เทศบาลนครระยอง
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap');
@@ -38,7 +38,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Responsive Neo-Brutalist Cards */
+/* Neo-Brutalist Cards */
 .neo-box {
   border: var(--border-dark);
   box-shadow: var(--shadow-brutal-sm);
@@ -269,7 +269,7 @@ body {
   font-weight: 600;
 }
 
-/* Hide scrollbar for category pills container */
+/* Hide scrollbar */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -279,7 +279,7 @@ body {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Floating Orbit Animation */
+/* Animations */
 @keyframes floatSlow {
   0%, 100% {
     transform: translateY(0px) rotate(0deg);
@@ -338,4 +338,119 @@ body {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   background-color: rgba(25, 26, 35, 0.65);
+}
+
+/* ==========================================================================
+   PIN Login Screen Styles (Positivus Theme)
+   ========================================================================== */
+
+.pin-digit-box {
+  width: 44px;
+  height: 52px;
+  border: var(--border-dark);
+  border-radius: 14px;
+  background-color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  box-shadow: var(--shadow-brutal-xs);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 640px) {
+  .pin-digit-box {
+    width: 52px;
+    height: 62px;
+    border-radius: 16px;
+    font-size: 1.75rem;
+    box-shadow: var(--shadow-brutal-sm);
+  }
+}
+
+.pin-digit-box.filled {
+  background-color: var(--color-lime);
+  border-color: var(--color-dark);
+  transform: scale(1.05);
+  box-shadow: 0px 4px 0px var(--color-dark);
+}
+
+.pin-digit-box.active-focus {
+  border-color: var(--color-dark);
+  background-color: #F9FAFB;
+  box-shadow: 0px 0px 0px 3px rgba(185, 255, 102, 0.6);
+}
+
+/* Keypad Numeric Buttons */
+.keypad-btn {
+  width: 100%;
+  height: 54px;
+  border: var(--border-dark);
+  border-radius: 16px;
+  background-color: #FFFFFF;
+  color: var(--color-dark);
+  font-size: 1.35rem;
+  font-weight: 700;
+  box-shadow: 0px 3px 0px var(--color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: all 0.15s ease;
+}
+
+@media (min-width: 640px) {
+  .keypad-btn {
+    height: 60px;
+    border-radius: 20px;
+    font-size: 1.5rem;
+    box-shadow: var(--shadow-brutal-sm);
+  }
+}
+
+.keypad-btn:hover {
+  background-color: var(--color-lime);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-brutal);
+}
+
+.keypad-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0px 1px 0px var(--color-dark);
+  background-color: var(--color-lime);
+}
+
+.keypad-btn-action {
+  background-color: #F3F3F3;
+  font-size: 1.1rem;
+}
+
+.keypad-btn-action:hover {
+  background-color: #E5E7EB;
+}
+
+/* Shake Animation for Wrong PIN */
+@keyframes shakePin {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-10px); }
+  40%, 80% { transform: translateX(10px); }
+}
+
+.animate-shake {
+  animation: shakePin 0.45s ease-in-out;
+}
+
+/* Unlock Success Animation */
+@keyframes unlockSuccess {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.04); opacity: 1; }
+  100% { transform: scale(0.96); opacity: 0; }
+}
+
+.animate-unlock {
+  animation: unlockSuccess 0.4s ease-in-out forwards;
 }

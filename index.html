@@ -31,6 +31,69 @@
 </head>
 <body class="bg-white min-h-screen flex flex-col selection:bg-[#B9FF66] selection:text-[#191A23] text-gray-900 antialiased">
 
+  <!-- PIN Code Security Overlay (PIN: 888888) -->
+  <div id="pin-overlay" class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#191A23]/95 backdrop-blur-md overflow-y-auto">
+    <div class="bg-white border-2 border-[#191A23] rounded-3xl p-6 sm:p-8 max-w-sm sm:max-w-md w-full shadow-[0px_8px_0px_#B9FF66] relative my-auto">
+      
+      <!-- Brand Logo & Security Badge -->
+      <div class="flex flex-col items-center text-center space-y-2.5 sm:space-y-3 mb-4 sm:mb-5">
+        <div class="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-[#191A23] bg-amber-50 p-1 shadow-md">
+          <img src="assets/images/logo.png" alt="โลโก้สำนักช่าง" class="w-full h-full object-contain">
+        </div>
+        
+        <div>
+          <span class="positivus-tag text-xs sm:text-sm font-bold">
+            ระบบความปลอดภัย
+          </span>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-[#191A23] mt-2 leading-tight">
+            กรุณากรอกรหัส PIN 6 หลัก
+          </h2>
+          <p class="text-gray-500 text-xs sm:text-sm mt-0.5 font-medium">
+            ศูนย์รวมระบบงาน
+          </p>
+        </div>
+      </div>
+
+      <!-- 6 PIN Digit Indicators -->
+      <div id="pin-boxes" class="flex items-center justify-center gap-2 sm:gap-2.5 my-3 sm:my-4">
+        <div class="pin-digit-box"></div>
+        <div class="pin-digit-box"></div>
+        <div class="pin-digit-box"></div>
+        <div class="pin-digit-box"></div>
+        <div class="pin-digit-box"></div>
+        <div class="pin-digit-box"></div>
+      </div>
+
+      <!-- Error Message -->
+      <div id="pin-error-message" class="hidden text-center text-red-600 text-xs sm:text-sm font-bold mb-3 flex items-center justify-center gap-1.5 animate-bounce">
+        <span>⚠️</span> <span>รหัส PIN ไม่ถูกต้อง กรุณาลองใหม่อีกครั้ง</span>
+      </div>
+
+      <!-- Touch Numeric Keypad -->
+      <div class="grid grid-cols-3 gap-2 sm:gap-2.5 max-w-[260px] sm:max-w-[290px] mx-auto mt-1 sm:mt-2">
+        <button type="button" class="keypad-btn" data-digit="1">1</button>
+        <button type="button" class="keypad-btn" data-digit="2">2</button>
+        <button type="button" class="keypad-btn" data-digit="3">3</button>
+        <button type="button" class="keypad-btn" data-digit="4">4</button>
+        <button type="button" class="keypad-btn" data-digit="5">5</button>
+        <button type="button" class="keypad-btn" data-digit="6">6</button>
+        <button type="button" class="keypad-btn" data-digit="7">7</button>
+        <button type="button" class="keypad-btn" data-digit="8">8</button>
+        <button type="button" class="keypad-btn" data-digit="9">9</button>
+        <button type="button" class="keypad-btn keypad-btn-action" data-action="clear">ล้าง</button>
+        <button type="button" class="keypad-btn" data-digit="0">0</button>
+        <button type="button" class="keypad-btn keypad-btn-action" data-action="delete" title="ลบตัวเลข">⌫</button>
+      </div>
+
+      <!-- Footer Info / Organization Credit -->
+      <div class="mt-4 sm:mt-5 pt-3 border-t border-gray-200 text-center text-[11px] sm:text-xs text-gray-500 leading-relaxed">
+        <div>จัดทำโดย ฝ่ายสาธารณูปโภค ส่วนการโยธา</div>
+        <div class="font-medium text-gray-700 mt-0.5">สำนักช่าง เทศบาลนครระยอง จังหวัดระยอง</div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- Top Announcement Bar -->
   <aside aria-label="แถบประกาศเทศบาล" class="bg-[#191A23] text-white text-[11px] sm:text-xs py-2 px-3 sm:px-6 border-b border-black">
     <div class="max-w-7xl mx-auto flex items-center justify-between gap-2">
@@ -74,8 +137,16 @@
         <a href="https://rayongcity.go.th" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-black transition-colors">เว็บเทศบาลนครระยอง ↗</a>
       </nav>
 
-      <!-- Action Button -->
+      <!-- Action Buttons -->
       <div class="flex items-center gap-2 flex-shrink-0">
+        <button 
+          id="logout-btn" 
+          type="button" 
+          title="ล็อกระบบเพื่อความปลอดภัย"
+          class="btn-positivus-outline text-xs sm:text-sm font-semibold flex items-center gap-1.5 px-2.5 py-1.5 sm:px-3 sm:py-2 text-gray-700 hover:text-red-600 hover:border-red-600 cursor-pointer">
+          <span>🔒 ล็อกระบบ</span>
+        </button>
+
         <button 
           id="help-modal-btn" 
           type="button" 
