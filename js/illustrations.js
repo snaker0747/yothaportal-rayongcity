@@ -12,7 +12,7 @@ const illustrations = {
     const fillColor = theme === 'dark' ? '#2A2B36' : '#FFFFFF';
 
     return `
-    <svg viewBox="0 0 210 170" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full max-w-[210px] max-h-[170px] transition-transform duration-500 group-hover:scale-105">
+    <svg viewBox="0 0 210 170" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full max-w-[210px] max-h-[170px] transition-transform duration-500 group-hover:scale-105" preserveAspectRatio="xMidYMid meet">
       <!-- Background Sparkles -->
       <path d="M185 25L188 35L198 38L188 41L185 51L182 41L172 38L182 35L185 25Z" fill="${strokeColor}"/>
       <circle cx="20" cy="45" r="4" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
@@ -64,7 +64,7 @@ const illustrations = {
     const poleColor = '#191A23';
 
     return `
-    <svg viewBox="0 0 210 170" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full max-w-[210px] max-h-[170px] transition-transform duration-500 group-hover:scale-105">
+    <svg viewBox="0 0 210 170" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full max-w-[210px] max-h-[170px] transition-transform duration-500 group-hover:scale-105" preserveAspectRatio="xMidYMid meet">
       <!-- Background Star / Waves -->
       <path d="M30 30L33 38L41 41L33 44L30 52L27 44L19 41L27 38L30 30Z" fill="${strokeColor}"/>
       <circle cx="185" cy="35" r="4" fill="${strokeColor}"/>
@@ -117,7 +117,7 @@ const illustrations = {
     const cardBg = '#2A2B36';
 
     return `
-    <svg viewBox="0 0 210 170" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full max-w-[210px] max-h-[170px] transition-transform duration-500 group-hover:scale-105">
+    <svg viewBox="0 0 210 170" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full max-w-[210px] max-h-[170px] transition-transform duration-500 group-hover:scale-105" preserveAspectRatio="xMidYMid meet">
       <!-- Background Sparks -->
       <path d="M25 35L27 42L34 44L27 46L25 53L23 46L16 44L23 42L25 35Z" fill="${accentColor}"/>
       <circle cx="185" cy="25" r="4" fill="${accentColor}"/>
@@ -169,71 +169,167 @@ const illustrations = {
     </svg>`;
   },
 
-  // Hero Megaphone Graphic
-  heroMegaphone: () => {
+  // 4. Hero Work Portal Hub Illustration (จินตนาการศูนย์รวมระบบงาน Work Portal สไตล์ Positivus)
+  heroPortalHub: () => {
     return `
-    <svg viewBox="0 0 420 360" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-[420px] h-auto drop-shadow-xl select-none">
-      <!-- Outer Orbiting Ellipse Loops -->
-      <ellipse cx="270" cy="220" rx="135" ry="55" transform="rotate(-18 270 220)" stroke="#191A23" stroke-width="2" stroke-dasharray="6 4"/>
-      <ellipse cx="270" cy="235" rx="140" ry="50" transform="rotate(-12 270 235)" stroke="#191A23" stroke-width="1.5"/>
-      <ellipse cx="270" cy="250" rx="145" ry="45" transform="rotate(-5 270 250)" stroke="#191A23" stroke-width="1"/>
+    <svg viewBox="0 0 440 370" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-[440px] h-auto select-none" preserveAspectRatio="xMidYMid meet">
+      
+      <!-- Planetary Orbiting Rings (วงโคจรเชื่อมต่อศูนย์รวมระบบงาน) -->
+      <ellipse cx="220" cy="225" rx="195" ry="72" transform="rotate(-16 220 225)" stroke="#191A23" stroke-width="2.5" stroke-dasharray="7 5"/>
+      <ellipse cx="220" cy="238" rx="205" ry="65" transform="rotate(-8 220 238)" stroke="#191A23" stroke-width="1.8"/>
+      <ellipse cx="220" cy="250" rx="215" ry="58" stroke="#191A23" stroke-width="1.2" stroke-dasharray="4 4"/>
 
-      <!-- Floating Sparkles & Geometric Stars (Positivus Theme) -->
-      <!-- Black Star Top Left -->
-      <circle cx="45" cy="50" r="14" fill="#191A23"/>
-      <!-- Green Dot -->
-      <circle cx="85" cy="70" r="7" fill="#B9FF66" stroke="#191A23" stroke-width="1.5"/>
-      <!-- Black 4-Point Star -->
-      <path d="M60 145L66 162L83 168L66 174L60 191L54 174L37 168L54 162L60 145Z" fill="#191A23"/>
-      <!-- Small Star Bottom -->
-      <path d="M190 290L193 298L201 301L193 304L190 312L187 304L179 301L187 298L190 290Z" fill="#191A23"/>
-      <!-- Green Dot Bottom Right -->
-      <circle cx="345" cy="290" r="8" fill="#B9FF66" stroke="#191A23" stroke-width="1.5"/>
+      <!-- Positivus Geometric Stars & Sparkles -->
+      <path d="M42 65L47 78L60 83L47 88L42 101L37 88L24 83L37 78L42 65Z" fill="#191A23"/>
+      <path d="M398 275L402 285L412 289L402 293L398 303L394 293L384 289L394 285L398 275Z" fill="#191A23"/>
+      <path d="M75 295L78 302L85 305L78 308L75 315L72 308L65 305L72 302L75 295Z" fill="#191A23"/>
 
-      <!-- Megaphone Body -->
-      <g filter="drop-shadow(4px 6px 0px #191A23)">
-        <!-- Megaphone Cone Base Back -->
-        <path d="M165 190L115 220L105 205L145 170L165 190Z" fill="#191A23"/>
-        <!-- Handle -->
-        <path d="M125 212L110 260C108 268 114 276 122 276H130C136 276 142 271 144 265L152 230" fill="#FFFFFF" stroke="#191A23" stroke-width="3"/>
+      <!-- Floating Accent Spheres -->
+      <circle cx="85" cy="45" r="7" fill="#B9FF66" stroke="#191A23" stroke-width="2"/>
+      <circle cx="365" cy="55" r="8" fill="#B9FF66" stroke="#191A23" stroke-width="2"/>
+      <circle cx="32" cy="180" r="10" fill="#191A23"/>
+      <circle cx="415" cy="195" r="7" fill="#B9FF66" stroke="#191A23" stroke-width="1.8"/>
+      <circle cx="220" cy="28" r="5" fill="#191A23"/>
+
+      <!-- Data Transmission Wave Beams (เส้นสัญญาณเชื่อมโยงระบบงาน) -->
+      <path d="M125 150 Q165 175 195 185" stroke="#191A23" stroke-width="2.5" stroke-dasharray="4 4"/>
+      <path d="M305 130 Q265 165 240 185" stroke="#191A23" stroke-width="2.5" stroke-dasharray="4 4"/>
+      <path d="M305 240 Q265 248 245 250" stroke="#191A23" stroke-width="2.5" stroke-dasharray="4 4"/>
+
+      <!-- 1. Central Isometric Floating Command Deck (ฐานพอร์ทัลศูนย์รวมระบบงาน) -->
+      <g filter="drop-shadow(4px 7px 0px #191A23)">
+        <!-- Base Platform Foundation (Dark Isometric Slab) -->
+        <path d="M125 245 L220 295 L315 245 L220 195 Z" fill="#191A23" stroke="#191A23" stroke-width="3" stroke-linejoin="round"/>
+        <path d="M125 245 L125 260 L220 310 L315 260 L315 245 L220 295 Z" fill="#191A23" stroke="#191A23" stroke-width="3" stroke-linejoin="round"/>
         
-        <!-- Main Megaphone Cone (Green & White Sections) -->
-        <!-- Green middle section -->
-        <path d="M160 185L250 85L285 140L185 225L160 185Z" fill="#B9FF66" stroke="#191A23" stroke-width="3.5" stroke-linejoin="round"/>
+        <!-- Deck Surface (White Top Slab) -->
+        <path d="M135 240 L220 285 L305 240 L220 195 Z" fill="#FFFFFF" stroke="#191A23" stroke-width="2.5" stroke-linejoin="round"/>
         
-        <!-- White Front Cone -->
-        <path d="M245 90L295 35L340 100L280 145L245 90Z" fill="#FFFFFF" stroke="#191A23" stroke-width="3.5" stroke-linejoin="round"/>
-
-        <!-- Front Oval Rim -->
-        <ellipse cx="318" cy="68" rx="28" ry="46" transform="rotate(35 318 68)" fill="#191A23" stroke="#191A23" stroke-width="3.5"/>
-        <ellipse cx="318" cy="68" rx="22" ry="40" transform="rotate(35 318 68)" fill="#FFFFFF" stroke="#191A23" stroke-width="2"/>
-        <ellipse cx="318" cy="68" rx="14" ry="26" transform="rotate(35 318 68)" fill="#191A23"/>
+        <!-- Glowing Green Portal Power Core (วงพลังงานดิจิทัลสีเขียวมะนาว) -->
+        <ellipse cx="220" cy="240" rx="55" ry="24" fill="#B9FF66" stroke="#191A23" stroke-width="2.5"/>
+        <ellipse cx="220" cy="240" rx="36" ry="15" fill="#FFFFFF" stroke="#191A23" stroke-width="2"/>
+        <ellipse cx="220" cy="240" rx="16" ry="7" fill="#191A23"/>
       </g>
 
-      <!-- Floating Feature Badges (Icons) -->
-      <!-- 1. Heart Badge (Top Right) -->
-      <g transform="translate(325, 25)" filter="drop-shadow(2px 3px 0px #191A23)">
-        <circle cx="20" cy="20" r="20" fill="#191A23"/>
-        <path d="M20 27L14.5 21.5C11.5 18.5 11.5 13.5 14.5 10.5C17.5 7.5 22.5 7.5 25.5 10.5C28.5 13.5 28.5 18.5 25.5 21.5L20 27Z" fill="#FFFFFF"/>
+      <!-- 2. Main Holographic Portal Hub Terminal (หน้าจอดิจิทัลพอร์ทัลหลักตรงกลาง) -->
+      <g transform="translate(150, 75)" filter="drop-shadow(4px 6px 0px #191A23)">
+        <!-- Terminal Body -->
+        <rect x="0" y="0" width="140" height="120" rx="20" fill="#191A23" stroke="#191A23" stroke-width="3.5"/>
+        <rect x="7" y="7" width="126" height="106" rx="14" fill="#FFFFFF" stroke="#191A23" stroke-width="2"/>
+        
+        <!-- Terminal Top Title Bar -->
+        <rect x="14" y="14" width="56" height="12" rx="6" fill="#B9FF66" stroke="#191A23" stroke-width="1.5"/>
+        <line x1="20" y1="20" x2="62" y2="20" stroke="#191A23" stroke-width="2" stroke-linecap="round"/>
+        <!-- Window Dots -->
+        <circle cx="102" cy="20" r="3.5" fill="#191A23"/>
+        <circle cx="114" cy="20" r="3.5" fill="#B9FF66" stroke="#191A23" stroke-width="1.5"/>
+        <circle cx="124" cy="20" r="3.5" fill="#191A23"/>
+
+        <!-- Terminal Core Portal Display (Connected Work Matrix) -->
+        <!-- Central Hub Node -->
+        <circle cx="70" cy="65" r="18" fill="#B9FF66" stroke="#191A23" stroke-width="2.5"/>
+        <!-- Hub Grid Icon inside -->
+        <rect x="62" y="57" width="6" height="6" rx="1.5" fill="#191A23"/>
+        <rect x="72" y="57" width="6" height="6" rx="1.5" fill="#191A23"/>
+        <rect x="62" y="67" width="6" height="6" rx="1.5" fill="#191A23"/>
+        <rect x="72" y="67" width="6" height="6" rx="1.5" fill="#FFFFFF" stroke="#191A23" stroke-width="1"/>
+
+        <!-- Connected Node Lines -->
+        <line x1="30" y1="45" x2="55" y2="58" stroke="#191A23" stroke-width="2"/>
+        <circle cx="28" cy="44" r="5" fill="#191A23"/>
+        
+        <line x1="110" y1="45" x2="85" y2="58" stroke="#191A23" stroke-width="2"/>
+        <circle cx="112" cy="44" r="5" fill="#B9FF66" stroke="#191A23" stroke-width="1.5"/>
+
+        <line x1="70" y1="83" x2="70" y2="98" stroke="#191A23" stroke-width="2"/>
+        <circle cx="70" cy="100" r="4.5" fill="#191A23"/>
+
+        <!-- Real-time Activity Pulse Wave -->
+        <path d="M22 92L38 92L44 85L50 99L56 92L118 92" stroke="#191A23" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </g>
 
-      <!-- 2. Share / Network Badge (Top Right Far) -->
-      <g transform="translate(370, 32)" filter="drop-shadow(2px 3px 0px #191A23)">
-        <circle cx="18" cy="18" r="18" fill="#B9FF66" stroke="#191A23" stroke-width="2.5"/>
-        <path d="M23 13L13 18L23 23M23 13C24.6569 13 26 11.6569 26 10C26 8.34315 24.6569 7 23 7C21.3431 7 20 8.34315 20 10C20 10.2 20.02 10.4 20.06 10.6L14.5 13.4C13.9 12.5 12.9 12 11.8 12C9.7 12 8 13.7 8 15.8C8 17.9 9.7 19.6 11.8 19.6C12.9 19.6 13.9 19.1 14.5 18.2L20.06 21C20.02 21.2 20 21.4 20 21.6C20 23.3 21.3 24.6 23 24.6C24.7 24.6 26 23.3 26 21.6C26 20 24.7 18.6 23 18.6" stroke="#191A23" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- 3. Orbiting Satellite Node 1: Project Tracking (งานติดตามโครงการ - ด้านซ้ายบน) -->
+      <g transform="translate(38, 95)" filter="drop-shadow(3px 4px 0px #191A23)">
+        <rect x="0" y="0" width="92" height="68" rx="14" fill="#F3F3F3" stroke="#191A23" stroke-width="2.5"/>
+        <rect x="10" y="10" width="34" height="8" rx="4" fill="#B9FF66" stroke="#191A23" stroke-width="1.2"/>
+        <!-- Checklist rows -->
+        <circle cx="16" cy="28" r="3.5" fill="#B9FF66" stroke="#191A23" stroke-width="1"/>
+        <line x1="24" y1="28" x2="78" y2="28" stroke="#191A23" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="16" cy="40" r="3.5" fill="#B9FF66" stroke="#191A23" stroke-width="1"/>
+        <line x1="24" y1="40" x2="68" y2="40" stroke="#191A23" stroke-width="2" stroke-linecap="round"/>
+        <!-- Mini Progress Bar -->
+        <rect x="12" y="50" width="68" height="8" rx="4" fill="#FFFFFF" stroke="#191A23" stroke-width="1.2"/>
+        <rect x="13" y="51" width="45" height="6" rx="3" fill="#B9FF66"/>
       </g>
 
-      <!-- 3. Play / Monitor Badge -->
-      <g transform="translate(365, 88)" filter="drop-shadow(2px 3px 0px #191A23)">
+      <!-- 4. Orbiting Satellite Node 2: Streetlight GIS (งานไฟฟ้าสาธารณะ GIS - ด้านขวาบน) -->
+      <g transform="translate(305, 80)" filter="drop-shadow(3px 4px 0px #191A23)">
+        <rect x="0" y="0" width="95" height="70" rx="14" fill="#B9FF66" stroke="#191A23" stroke-width="2.5"/>
+        <rect x="10" y="10" width="32" height="8" rx="4" fill="#FFFFFF" stroke="#191A23" stroke-width="1.2"/>
+        <!-- Streetlight Pole & Glow -->
+        <path d="M30 55V28C30 22 24 20 20 20" stroke="#191A23" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M16 20H26L28 26H14L16 20Z" fill="#191A23"/>
+        <ellipse cx="21" cy="27" rx="5" ry="2" fill="#FFFFFF"/>
+        <!-- Map Pin / Signal Icon -->
+        <circle cx="68" cy="35" r="14" fill="#FFFFFF" stroke="#191A23" stroke-width="2"/>
+        <path d="M68 28C65 28 62 30.5 62 34C62 38 68 44 68 44C68 44 74 38 74 34C74 30.5 71 28 68 28Z" fill="#191A23"/>
+        <circle cx="68" cy="34" r="2" fill="#B9FF66"/>
+        <!-- Sensor Waves -->
+        <path d="M34 22C38 22 42 26 42 30" stroke="#191A23" stroke-width="1.8" stroke-linecap="round"/>
+      </g>
+
+      <!-- 5. Orbiting Satellite Node 3: Stock Materials (งานเบิกจ่ายวัสดุ/คลัง - ด้านขวาล่าง) -->
+      <g transform="translate(300, 195)" filter="drop-shadow(3px 4px 0px #191A23)">
+        <rect x="0" y="0" width="94" height="65" rx="14" fill="#191A23" stroke="#191A23" stroke-width="2.5"/>
+        <rect x="10" y="10" width="30" height="8" rx="4" fill="#FFFFFF" stroke="#191A23" stroke-width="1.2"/>
+        <!-- Storage 3D Package Box -->
+        <rect x="18" y="24" width="34" height="28" rx="6" fill="#2A2B36" stroke="#FFFFFF" stroke-width="1.8"/>
+        <line x1="18" y1="34" x2="52" y2="34" stroke="#FFFFFF" stroke-width="1.5"/>
+        <rect x="30" y="24" width="10" height="28" fill="#B9FF66" stroke="#FFFFFF" stroke-width="1.2"/>
+        <!-- Checkmark Badge -->
+        <circle cx="68" cy="38" r="11" fill="#B9FF66" stroke="#FFFFFF" stroke-width="2"/>
+        <path d="M64 38L67 41L72 35" stroke="#191A23" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+
+      <!-- 6. Floating Action & Connectivity Badges (ไอคอนลูกโป่งลอยตัวสไตล์ Positivus) -->
+      <!-- Rocket / Fast Launch Badge (Top Center-Left) -->
+      <g transform="translate(105, 30)" filter="drop-shadow(2px 3px 0px #191A23)">
         <circle cx="18" cy="18" r="18" fill="#191A23"/>
-        <polygon points="14,10 26,18 14,26" fill="#FFFFFF"/>
+        <path d="M18 10C18 10 24 12 25 18L21 22L14 15L18 10Z" fill="#B9FF66"/>
+        <path d="M14 15L11 16L12 19L14 18" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round"/>
+        <circle cx="20" cy="15" r="1.5" fill="#191A23"/>
+        <path d="M11 25C13 23 14 20 14 20C14 20 11 21 9 23L11 25Z" fill="#FFFFFF"/>
       </g>
 
-      <!-- 4. Location / GIS Pin Badge (Bottom Right) -->
-      <g transform="translate(355, 145)" filter="drop-shadow(2px 3px 0px #191A23)">
-        <circle cx="22" cy="22" r="22" fill="#B9FF66" stroke="#191A23" stroke-width="2.5"/>
-        <path d="M22 10C17.5817 10 14 13.5817 14 18C14 23.5 22 32 22 32C22 32 30 23.5 30 18C30 13.5817 26.4183 10 22 10ZM22 21C20.3431 21 19 19.6569 19 18C19 16.3431 20.3431 15 22 15C23.6569 15 25 16.3431 25 18C25 19.6569 23.6569 21 22 21Z" fill="#191A23"/>
+      <!-- Network Share / Connectivity Badge (Far Right Top) -->
+      <g transform="translate(385, 20)" filter="drop-shadow(2px 3px 0px #191A23)">
+        <circle cx="18" cy="18" r="18" fill="#191A23"/>
+        <path d="M23 13L13 18L23 23" stroke="#B9FF66" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="23" cy="13" r="3.5" fill="#FFFFFF"/>
+        <circle cx="13" cy="18" r="3.5" fill="#FFFFFF"/>
+        <circle cx="23" cy="23" r="3.5" fill="#FFFFFF"/>
       </g>
+
+      <!-- 45-Degree Fast Link Arrow Badge (Left Side) -->
+      <g transform="translate(15, 125)" filter="drop-shadow(2px 3px 0px #191A23)">
+        <circle cx="17" cy="17" r="17" fill="#B9FF66" stroke="#191A23" stroke-width="2"/>
+        <path d="M12 22L22 12M22 12H14M22 12V20" stroke="#191A23" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+
+      <!-- Secure Database / Server Hub Badge (Bottom Left) -->
+      <g transform="translate(60, 230)" filter="drop-shadow(2px 3px 0px #191A23)">
+        <circle cx="18" cy="18" r="18" fill="#191A23"/>
+        <!-- Database Disks -->
+        <ellipse cx="18" cy="13" rx="9" ry="3.5" fill="#B9FF66" stroke="#FFFFFF" stroke-width="1.2"/>
+        <path d="M9 13V18C9 20 18 20 18 20C18 20 27 20 27 18V13" stroke="#FFFFFF" stroke-width="1.2" fill="none"/>
+        <path d="M9 18V23C9 25 18 25 18 25C18 25 27 25 27 23V18" stroke="#FFFFFF" stroke-width="1.2" fill="none"/>
+      </g>
+
     </svg>`;
+  },
+
+  // Alias for backward compatibility
+  heroMegaphone: function() {
+    return this.heroPortalHub();
   }
 };
