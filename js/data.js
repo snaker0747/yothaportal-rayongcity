@@ -72,6 +72,21 @@ const systemsData = [
     tag: "ระบบคลัง / บันทึกเบิกจ่าย",
     iconBg: "#B9FF66",
     isPinned: false
+  },
+  {
+    id: "drr-local-road-gis",
+    title: "ระบบรายงานการบริหารจัดการข้อมูลทางหลวงท้องถิ่น",
+    badgeTitle: ["ข้อมูลทางหลวง", "ท้องถิ่น (DRR)"],
+    category: "ทางหลวงท้องถิ่น",
+    department: "สำนักส่งเสริมการพัฒนาทางหลวงท้องถิ่น กรมทางหลวงชนบท",
+    description: "แดชบอร์ดระบบสารสนเทศภูมิศาสตร์ (GIS Dashboard) รายงานการบริหารจัดการข้อมูลสายทางและโครงข่ายทางหลวงท้องถิ่น กรมทางหลวงชนบท",
+    url: "https://gisportal.drr.go.th/portal/apps/dashboards/fc587b24eb1d4f5e811a08418ccf1d0f",
+    cardTheme: "light",
+    illustrationType: "roadGis",
+    status: "online",
+    tag: "ระบบ GIS / ทางหลวงท้องถิ่น",
+    iconBg: "#B9FF66",
+    isPinned: false
   }
 ];
 
@@ -80,5 +95,6 @@ const categories = [
   { id: "all", name: "ทั้งหมด" },
   { id: "งานโครงการ", name: "งานติดตามโครงการ" },
   { id: "ไฟฟ้าสาธารณะ", name: "ไฟฟ้าสาธารณะ" },
-  { id: "พัสดุและคลังวัสดุ", name: "เบิกจ่ายวัสดุ/คลัง" }
+  { id: "พัสดุและคลังวัสดุ", name: "เบิกจ่ายวัสดุ/คลัง" },
+  { id: "ทางหลวงท้องถิ่น", name: "ทางหลวงท้องถิ่น (DRR)" }
 ];

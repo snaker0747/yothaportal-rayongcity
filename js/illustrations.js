@@ -169,7 +169,61 @@ const illustrations = {
     </svg>`;
   },
 
-  // 4. Hero Work Portal Hub Illustration (จินตนาการศูนย์รวมระบบงาน Work Portal สไตล์ Positivus)
+  // 4. งานทางหลวงท้องถิ่น (Local Highway & Road GIS Dashboard)
+  roadGis: (theme = 'light') => {
+    const strokeColor = theme === 'dark' ? '#FFFFFF' : '#191A23';
+    const accentColor = '#B9FF66';
+    const fillColor = theme === 'dark' ? '#2A2B36' : '#FFFFFF';
+    const roadColor = '#191A23';
+
+    return `
+    <svg viewBox="0 0 210 170" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full max-w-[210px] max-h-[170px] transition-transform duration-500 group-hover:scale-105" preserveAspectRatio="xMidYMid meet">
+      <!-- Background Sparks -->
+      <path d="M185 25L188 35L198 38L188 41L185 51L182 41L172 38L182 35L185 25Z" fill="${strokeColor}"/>
+      <circle cx="25" cy="40" r="4" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+      <circle cx="195" cy="140" r="5" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+
+      <!-- GIS Map Base Board (3D Isometric / Dashboard Tablet) -->
+      <g filter="drop-shadow(3px 4px 0px ${strokeColor})">
+        <rect x="35" y="32" width="140" height="112" rx="16" fill="${fillColor}" stroke="${strokeColor}" stroke-width="2.5"/>
+      </g>
+
+      <!-- Map Grid Lines / Terrain -->
+      <path d="M36 70H174" stroke="${theme === 'dark' ? '#4B5563' : '#E5E7EB'}" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <path d="M36 105H174" stroke="${theme === 'dark' ? '#4B5563' : '#E5E7EB'}" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <path d="M82 33V143" stroke="${theme === 'dark' ? '#4B5563' : '#E5E7EB'}" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <path d="M128 33V143" stroke="${theme === 'dark' ? '#4B5563' : '#E5E7EB'}" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+      <!-- Highway / Road Curve (ทางหลวงท้องถิ่น) -->
+      <path d="M45 135 C65 110 80 100 105 92 C135 82 145 60 165 42" stroke="${roadColor}" stroke-width="16" stroke-linecap="round"/>
+      <path d="M45 135 C65 110 80 100 105 92 C135 82 145 60 165 42" stroke="${accentColor}" stroke-width="2" stroke-linecap="round" stroke-dasharray="6 6"/>
+
+      <!-- Top Dashboard Header Tag -->
+      <rect x="48" y="42" width="48" height="12" rx="6" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+      <circle cx="55" cy="48" r="2.5" fill="${strokeColor}"/>
+      <line x1="62" y1="48" x2="88" y2="48" stroke="${strokeColor}" stroke-width="1.8" stroke-linecap="round"/>
+
+      <!-- GIS Location Pin Marker on Road -->
+      <g transform="translate(95, 68)" filter="drop-shadow(2px 3px 0px ${strokeColor})">
+        <circle cx="16" cy="16" r="14" fill="${accentColor}" stroke="${strokeColor}" stroke-width="2"/>
+        <path d="M16 8C12 8 9 11 9 15C9 19.5 16 26 16 26C16 26 23 19.5 23 15C23 11 20 8 16 8Z" fill="${strokeColor}"/>
+        <circle cx="16" cy="14" r="2.5" fill="#FFFFFF"/>
+      </g>
+
+      <!-- Mini Satellite / DRR Badge (Top-Right) -->
+      <g transform="translate(142, 22)" filter="drop-shadow(2px 2px 0px ${strokeColor})">
+        <circle cx="16" cy="16" r="14" fill="${theme === 'dark' ? '#191A23' : '#FFFFFF'}" stroke="${strokeColor}" stroke-width="2"/>
+        <path d="M11 16L16 11M16 21L21 16M13.5 13.5L18.5 18.5" stroke="${accentColor}" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="21" cy="11" r="2" fill="${strokeColor}"/>
+      </g>
+
+      <!-- Road Node Pulse Dots -->
+      <circle cx="52" cy="128" r="3.5" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+      <circle cx="158" cy="48" r="3.5" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+    </svg>`;
+  },
+
+  // 5. Hero Work Portal Hub Illustration (จินตนาการศูนย์รวมระบบงาน Work Portal สไตล์ Positivus)
   heroPortalHub: () => {
     return `
     <svg viewBox="0 0 440 370" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full max-w-[440px] h-auto select-none" preserveAspectRatio="xMidYMid meet">
