@@ -23,7 +23,7 @@ const portalConfig = {
     phone: "038-xxx-xxx",
     location: "สำนักช่าง เทศบาลนครระยอง",
     facebook: "https://www.facebook.com/RayongCitySmart",
-    website: "https://www.rayongcity.go.th"
+    website: "https://www.rayongcity.go.th/"
   }
 };
 
