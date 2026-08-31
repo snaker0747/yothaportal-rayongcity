@@ -223,6 +223,52 @@ const illustrations = {
     </svg>`;
   },
 
+  // 5. งานบริหารสัญญาโครงการ (Contract Management / Signature & Documents)
+  contract: (theme = 'light') => {
+    const strokeColor = theme === 'dark' ? '#FFFFFF' : '#191A23';
+    const accentColor = '#B9FF66';
+    const subStroke = theme === 'dark' ? '#A0A0A0' : '#4B4B4B';
+    const fillColor = theme === 'dark' ? '#2A2B36' : '#FFFFFF';
+
+    return `
+    <svg viewBox="0 0 210 170" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full max-w-[210px] max-h-[170px] transition-transform duration-500 group-hover:scale-105" preserveAspectRatio="xMidYMid meet">
+      <!-- Background Sparks -->
+      <path d="M185 25L188 35L198 38L188 41L185 51L182 41L172 38L182 35L185 25Z" fill="${strokeColor}"/>
+      <circle cx="20" cy="40" r="4" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+      <circle cx="195" cy="135" r="5" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+
+      <!-- Contract Paper Sheet -->
+      <g filter="drop-shadow(3px 4px 0px ${strokeColor})">
+        <rect x="45" y="25" width="115" height="120" rx="14" fill="${fillColor}" stroke="${strokeColor}" stroke-width="2.5"/>
+      </g>
+
+      <!-- Document Lines -->
+      <!-- Title Badge -->
+      <rect x="60" y="40" width="50" height="10" rx="5" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+      <!-- Lines -->
+      <line x1="60" y1="62" x2="140" y2="62" stroke="${subStroke}" stroke-width="2" stroke-linecap="round"/>
+      <line x1="60" y1="74" x2="130" y2="74" stroke="${subStroke}" stroke-width="2" stroke-linecap="round"/>
+      <line x1="60" y1="86" x2="140" y2="86" stroke="${subStroke}" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- Signature Line and Stamp -->
+      <line x1="60" y1="112" x2="105" y2="112" stroke="${strokeColor}" stroke-width="1.5" stroke-dasharray="3 2"/>
+      
+      <!-- Seal / Approved Stamp -->
+      <circle cx="125" cy="115" r="15" fill="${accentColor}" stroke="${strokeColor}" stroke-width="2"/>
+      <!-- Approved Check inside Seal -->
+      <path d="M120 115L123 118L131 110" stroke="${strokeColor}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+      <!-- Feather Pen / Stylus -->
+      <g transform="translate(130, 60) rotate(15)">
+        <path d="M0 45 L10 10 L30 0 L25 25 L5 40 Z" fill="${theme === 'green' ? '#FFFFFF' : accentColor}" stroke="${strokeColor}" stroke-width="2"/>
+        <!-- Pen Tip -->
+        <path d="M0 45 L5 40 L0 35 Z" fill="${strokeColor}"/>
+        <!-- Line from pen tip -->
+        <path d="M-8 48 C-15 50 -25 45 -35 55" stroke="${strokeColor}" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      </g>
+    </svg>`;
+  },
+
   // 5. Hero Work Portal Hub Illustration (จินตนาการศูนย์รวมระบบงาน Work Portal สไตล์ Positivus)
   heroPortalHub: () => {
     return `
