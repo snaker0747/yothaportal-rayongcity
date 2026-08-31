@@ -87,13 +87,28 @@ const systemsData = [
     tag: "ระบบ GIS / ทางหลวงท้องถิ่น",
     iconBg: "#B9FF66",
     isPinned: false
+  },
+  {
+    id: "rayong-cms",
+    title: "ระบบบริหารสัญญาโครงการ (Contract Management System : CMS)",
+    badgeTitle: ["บริหารสัญญา", "โครงการ (CMS)"],
+    category: "งานโครงการ",
+    department: "ฝ่ายสาธารณูปโภค ส่วนการโยธา สำนักช่าง",
+    description: "ระบบบริหารและติดตามสัญญาโครงการก่อสร้าง การจัดการเอกสารสัญญา กำหนดเวลา และความคืบหน้าคู่สัญญาเพื่อการดำเนินงานที่โปร่งใส",
+    url: "https://rayong-cms.vercel.app",
+    cardTheme: "green",
+    illustrationType: "contract",
+    status: "online",
+    tag: "ระบบบริหารสัญญา / CMS",
+    iconBg: "#FFFFFF",
+    isPinned: false
   }
 ];
 
 // รายชื่อหมวดหมู่สำหรับ Filter Tabs
 const categories = [
   { id: "all", name: "ทั้งหมด" },
-  { id: "งานโครงการ", name: "งานติดตามโครงการ" },
+  { id: "งานโครงการ", name: "โครงการและสัญญา" },
   { id: "ไฟฟ้าสาธารณะ", name: "ไฟฟ้าสาธารณะ" },
   { id: "พัสดุและคลังวัสดุ", name: "เบิกจ่ายวัสดุ/คลัง" },
   { id: "ทางหลวงท้องถิ่น", name: "ทางหลวงท้องถิ่น (DRR)" }
