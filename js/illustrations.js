@@ -269,6 +269,71 @@ const illustrations = {
     </svg>`;
   },
 
+  // 6. ระบบงานซ่อมบำรุงไฟฟ้าสาธารณะ (Streetlight Maintenance & Preventive Maintenance)
+  streetlightPm: (theme = 'dark') => {
+    const strokeColor = theme === 'dark' ? '#FFFFFF' : '#191A23';
+    const accentColor = '#B9FF66';
+    const subStroke = theme === 'dark' ? '#A0A0A0' : '#4B4B4B';
+    const fillColor = theme === 'dark' ? '#2A2B36' : '#FFFFFF';
+
+    return `
+    <svg viewBox="0 0 210 170" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full max-w-[210px] max-h-[170px] transition-transform duration-500 group-hover:scale-105" preserveAspectRatio="xMidYMid meet">
+      <!-- Background Sparks -->
+      <path d="M185 25L188 35L198 38L188 41L185 51L182 41L172 38L182 35L185 25Z" fill="${strokeColor}"/>
+      <circle cx="20" cy="40" r="4" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+      <circle cx="195" cy="135" r="5" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+
+      <!-- Maintenance Board / Base Card -->
+      <g transform="translate(25, 25)" filter="drop-shadow(3px 4px 0px ${strokeColor})">
+        <rect x="0" y="0" width="105" height="115" rx="16" fill="${fillColor}" stroke="${strokeColor}" stroke-width="2.5"/>
+        
+        <!-- Top Board Clip / Tag -->
+        <rect x="25" y="-6" width="55" height="14" rx="6" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.8"/>
+        <circle cx="52" cy="1" r="2.5" fill="${strokeColor}"/>
+        
+        <!-- Streetlight in Card -->
+        <!-- Pole -->
+        <path d="M70 100V45C70 32 58 28 48 28H42" stroke="${strokeColor}" stroke-width="3" stroke-linecap="round"/>
+        <!-- Lamp head -->
+        <path d="M30 38H56L60 46H26L30 38Z" fill="${theme === 'dark' ? '#191A23' : '#F3F3F3'}" stroke="${strokeColor}" stroke-width="1.8"/>
+        <!-- Lamp bulb / glow -->
+        <ellipse cx="43" cy="47" rx="11" ry="4" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+        
+        <!-- PM Checklist status -->
+        <circle cx="20" cy="65" r="4" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.2"/>
+        <path d="M18 65L20 67L23 63" stroke="${strokeColor}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="28" y1="65" x2="52" y2="65" stroke="${subStroke}" stroke-width="1.8" stroke-linecap="round"/>
+
+        <circle cx="20" cy="80" r="4" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.2"/>
+        <path d="M18 80L20 82L23 78" stroke="${strokeColor}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="28" y1="80" x2="52" y2="80" stroke="${subStroke}" stroke-width="1.8" stroke-linecap="round"/>
+
+        <circle cx="20" cy="95" r="4" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.2"/>
+        <path d="M18 95L20 97L23 93" stroke="${strokeColor}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="28" y1="95" x2="48" y2="95" stroke="${subStroke}" stroke-width="1.8" stroke-linecap="round"/>
+      </g>
+
+      <!-- Crossed Repair Tools: Wrench & Screwdriver -->
+      <g transform="translate(130, 75)" filter="drop-shadow(2px 3px 0px ${strokeColor})">
+        <!-- Maintenance Gear Badge -->
+        <circle cx="28" cy="28" r="26" fill="${accentColor}" stroke="${strokeColor}" stroke-width="2.5"/>
+        
+        <!-- Wrench icon -->
+        <g transform="translate(12, 12)">
+          <path d="M24 8L20 12L24 16L18 22C16 24 13 24 11 22L7 18C5 16 5 13 7 11L13 5C15 3 18 3 20 5L24 8Z" fill="${theme === 'dark' ? '#191A23' : '#FFFFFF'}" stroke="${strokeColor}" stroke-width="2" stroke-linejoin="round"/>
+          <path d="M10 24L3 31" stroke="${strokeColor}" stroke-width="3" stroke-linecap="round"/>
+        </g>
+
+        <!-- Lightning Sparkle -->
+        <path d="M26 12L22 24H28L24 36" stroke="${strokeColor}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+
+      <!-- Pulse Dot / Status -->
+      <circle cx="135" cy="40" r="4" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+      <path d="M125 40C125 34 130 30 135 30" stroke="${strokeColor}" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>`;
+  },
+
   // 5. Hero Work Portal Hub Illustration (จินตนาการศูนย์รวมระบบงาน Work Portal สไตล์ Positivus)
   heroPortalHub: () => {
     return `

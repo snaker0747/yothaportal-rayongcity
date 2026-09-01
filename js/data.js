@@ -102,6 +102,21 @@ const systemsData = [
     tag: "ระบบบริหารสัญญา / CMS",
     iconBg: "#FFFFFF",
     isPinned: false
+  },
+  {
+    id: "streetlight-pm",
+    title: "ระบบงานซ่อมบำรุงไฟฟ้าสาธารณะ",
+    badgeTitle: ["งานซ่อมบำรุง", "ไฟฟ้าสาธารณะ (PM)"],
+    category: "ไฟฟ้าสาธารณะ",
+    department: "ฝ่ายสาธารณูปโภค ส่วนการโยธา สำนักช่าง",
+    description: "ระบบบริหารจัดการแผนงานซ่อมบำรุง งานบำรุงรักษาเชิงป้องกัน (Preventive Maintenance) และบันทึกประวัติการแก้ไขไฟฟ้าสาธารณะ เทศบาลนครระยอง",
+    url: "https://yotharayongpm.vercel.app/",
+    cardTheme: "dark",
+    illustrationType: "streetlightPm",
+    status: "online",
+    tag: "ระบบซ่อมบำรุง / ไฟฟ้าสาธารณะ",
+    iconBg: "#B9FF66",
+    isPinned: false
   }
 ];
 
