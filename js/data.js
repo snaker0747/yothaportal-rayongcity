@@ -117,6 +117,21 @@ const systemsData = [
     tag: "ระบบซ่อมบำรุง / ไฟฟ้าสาธารณะ",
     iconBg: "#B9FF66",
     isPinned: false
+  },
+  {
+    id: "mapdata-lighting",
+    title: "แผนที่ข้อมูลไฟฟ้าสาธารณะ",
+    badgeTitle: ["แผนที่ข้อมูล", "ไฟฟ้าสาธารณะ"],
+    category: "ไฟฟ้าสาธารณะ",
+    department: "ฝ่ายสาธารณูปโภค ส่วนการโยธา สำนักช่าง",
+    description: "ระบบแผนที่ดิจิทัลแสดงตำแหน่งและข้อมูลเชิงลึกเสาไฟฟ้า โคมไฟส่องสว่างสาธารณะ โซนพื้นที่ และการกระจายตัวของโครงข่ายไฟฟ้าในเขตเทศบาลนครระยอง",
+    url: "https://mapdata-lighting.netlify.app/",
+    cardTheme: "light",
+    illustrationType: "mapdataLighting",
+    status: "online",
+    tag: "ระบบแผนที่ GIS / ข้อมูลไฟฟ้า",
+    iconBg: "#B9FF66",
+    isPinned: false
   }
 ];
 

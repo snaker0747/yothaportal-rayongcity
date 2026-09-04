@@ -334,6 +334,71 @@ const illustrations = {
     </svg>`;
   },
 
+  // 7. แผนที่ข้อมูลไฟฟ้าสาธารณะ (Streetlight Map Data & GIS Network)
+  mapdataLighting: (theme = 'light') => {
+    const strokeColor = theme === 'dark' ? '#FFFFFF' : '#191A23';
+    const accentColor = '#B9FF66';
+    const subStroke = theme === 'dark' ? '#A0A0A0' : '#4B4B4B';
+    const fillColor = theme === 'dark' ? '#2A2B36' : '#FFFFFF';
+    const gridStroke = theme === 'dark' ? '#4B5563' : '#E5E7EB';
+
+    return `
+    <svg viewBox="0 0 210 170" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full max-w-[210px] max-h-[170px] transition-transform duration-500 group-hover:scale-105" preserveAspectRatio="xMidYMid meet">
+      <!-- Background Sparks -->
+      <path d="M185 25L188 35L198 38L188 41L185 51L182 41L172 38L182 35L185 25Z" fill="${strokeColor}"/>
+      <circle cx="20" cy="40" r="4" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+      <circle cx="195" cy="135" r="5" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+
+      <!-- GIS Map Screen / Folded Map Board -->
+      <g filter="drop-shadow(3px 4px 0px ${strokeColor})">
+        <rect x="35" y="28" width="140" height="118" rx="16" fill="${fillColor}" stroke="${strokeColor}" stroke-width="2.5"/>
+      </g>
+
+      <!-- Map Grid & Zone Layers -->
+      <path d="M36 65H174" stroke="${gridStroke}" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <path d="M36 102H174" stroke="${gridStroke}" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <path d="M82 29V145" stroke="${gridStroke}" stroke-width="1.5" stroke-dasharray="4 4"/>
+      <path d="M128 29V145" stroke="${gridStroke}" stroke-width="1.5" stroke-dasharray="4 4"/>
+
+      <!-- Road & Grid Intersections -->
+      <path d="M45 125 C70 120 85 95 110 90 C135 85 150 55 165 45" stroke="${strokeColor}" stroke-width="6" stroke-linecap="round"/>
+      <path d="M45 125 C70 120 85 95 110 90 C135 85 150 55 165 45" stroke="${accentColor}" stroke-width="2" stroke-linecap="round" stroke-dasharray="4 4"/>
+
+      <!-- Top Header Tag: GIS Map Indicator -->
+      <rect x="46" y="38" width="46" height="11" rx="5.5" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+      <circle cx="53" cy="43.5" r="2.5" fill="${strokeColor}"/>
+      <line x1="60" y1="43.5" x2="84" y2="43.5" stroke="${strokeColor}" stroke-width="1.8" stroke-linecap="round"/>
+
+      <!-- Streetlight Nodes with Glowing Light Cones on Map -->
+      <!-- Node 1 (Left Road) -->
+      <circle cx="68" cy="112" r="6" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.8"/>
+      <circle cx="68" cy="112" r="2" fill="${strokeColor}"/>
+      <path d="M68 106L62 96H74L68 106Z" fill="${accentColor}" fill-opacity="0.6" stroke="${strokeColor}" stroke-width="1"/>
+
+      <!-- Node 2 (Center Intersection) -->
+      <circle cx="108" cy="88" r="6" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.8"/>
+      <circle cx="108" cy="88" r="2" fill="${strokeColor}"/>
+      <path d="M108 82L102 72H114L108 82Z" fill="${accentColor}" fill-opacity="0.6" stroke="${strokeColor}" stroke-width="1"/>
+
+      <!-- Node 3 (Top Right Road) -->
+      <circle cx="148" cy="55" r="6" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.8"/>
+      <circle cx="148" cy="55" r="2" fill="${strokeColor}"/>
+      <path d="M148 49L142 39H154L148 49Z" fill="${accentColor}" fill-opacity="0.6" stroke="${strokeColor}" stroke-width="1"/>
+
+      <!-- Connecting Lighting Grid Data Lines -->
+      <path d="M68 112 Q88 100 108 88" stroke="${strokeColor}" stroke-width="1.5" stroke-dasharray="3 2"/>
+      <path d="M108 88 Q128 72 148 55" stroke="${strokeColor}" stroke-width="1.5" stroke-dasharray="3 2"/>
+
+      <!-- Floating GIS Map Pin / Radar Beacon Badge (Right Bottom) -->
+      <g transform="translate(132, 85)" filter="drop-shadow(2px 3px 0px ${strokeColor})">
+        <circle cx="20" cy="20" r="18" fill="${accentColor}" stroke="${strokeColor}" stroke-width="2.2"/>
+        <!-- Map Pin -->
+        <path d="M20 9C15.5 9 12 12.5 12 17C12 22.5 20 29 20 29C20 29 28 22.5 28 17C28 12.5 24.5 9 20 9ZM20 20C18.3 20 17 18.7 17 17C17 15.3 18.3 14 20 14C21.7 14 23 15.3 23 17C23 18.7 21.7 20 20 20Z" fill="${strokeColor}"/>
+        <circle cx="20" cy="17" r="2" fill="#FFFFFF"/>
+      </g>
+    </svg>`;
+  },
+
   // 5. Hero Work Portal Hub Illustration (จินตนาการศูนย์รวมระบบงาน Work Portal สไตล์ Positivus)
   heroPortalHub: () => {
     return `
