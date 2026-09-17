@@ -35,7 +35,7 @@ const systemsData = [
     category: "งานโครงการ",
     department: "ฝ่ายสาธารณูปโภค ส่วนการโยธา",
     description: "ระบบติดตามความคืบหน้าโครงการก่อสร้าง ปรับปรุง และซ่อมบำรุงโครงสร้างพื้นฐานในเขตเทศบาลนครระยอง รายงานผลแบบเรียลไทม์",
-    url: "https://rayongcity-works.netlify.app/",
+    url: "https://rayong-tracking.vercel.app",
     cardTheme: "light", // 'light', 'green', 'dark'
     illustrationType: "project",
     status: "online", // 'online', 'maintenance'
