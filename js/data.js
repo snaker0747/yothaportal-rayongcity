@@ -50,7 +50,7 @@ const systemsData = [
     category: "ไฟฟ้าสาธารณะ",
     department: "ฝ่ายสาธารณูปโภค ส่วนการโยธา",
     description: "ระบบแผนที่ตำแหน่งและฐานข้อมูลเสาไฟฟ้า โคมไฟส่องสว่างสาธารณะ พร้อมระบบบันทึกตรวจสอบและติดตามการซ่อมบำรุงไฟฟ้าดับ",
-    url: "https://rayongcitystreetlight.netlify.app/",
+    url: "https://rayongcitystreetlight.vercel.app/",
     cardTheme: "green", // 'light', 'green', 'dark'
     illustrationType: "streetlight",
     status: "online",
