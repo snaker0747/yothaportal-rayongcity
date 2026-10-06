@@ -399,6 +399,66 @@ const illustrations = {
     </svg>`;
   },
 
+  // 8. ระบบสร้างรายงาน (Report Generator / Analytics & Documents)
+  genReport: (theme = 'green') => {
+    const strokeColor = '#191A23';
+    const accentColor = '#B9FF66';
+    const subStroke = '#4B4B4B';
+    const fillColor = '#FFFFFF';
+
+    return `
+    <svg viewBox="0 0 210 170" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full max-w-[210px] max-h-[170px] transition-transform duration-500 group-hover:scale-105" preserveAspectRatio="xMidYMid meet">
+      <!-- Background Sparks -->
+      <path d="M185 25L188 35L198 38L188 41L185 51L182 41L172 38L182 35L185 25Z" fill="${strokeColor}"/>
+      <circle cx="20" cy="40" r="4" fill="${strokeColor}"/>
+      <circle cx="195" cy="135" r="5" fill="#FFFFFF" stroke="${strokeColor}" stroke-width="1.5"/>
+
+      <!-- Stacked Background Document Sheet -->
+      <rect x="52" y="24" width="112" height="120" rx="14" fill="#F3F3F3" stroke="${strokeColor}" stroke-width="2" transform="rotate(4 108 84)"/>
+
+      <!-- Main Report Document Sheet -->
+      <g filter="drop-shadow(3px 4px 0px ${strokeColor})">
+        <rect x="42" y="22" width="116" height="124" rx="14" fill="${fillColor}" stroke="${strokeColor}" stroke-width="2.5"/>
+      </g>
+
+      <!-- Report Header Badge -->
+      <rect x="54" y="34" width="48" height="10" rx="5" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+      <circle cx="140" cy="39" r="4" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.2"/>
+
+      <!-- Analytics Chart Bars -->
+      <g transform="translate(54, 52)">
+        <!-- Bar Chart Container -->
+        <rect x="0" y="0" width="52" height="42" rx="6" fill="#F9FAFB" stroke="${strokeColor}" stroke-width="1.5"/>
+        <!-- Bars -->
+        <rect x="6" y="24" width="7" height="13" rx="2" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1"/>
+        <rect x="17" y="16" width="7" height="21" rx="2" fill="${strokeColor}"/>
+        <rect x="28" y="9" width="7" height="28" rx="2" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1"/>
+        <rect x="39" y="18" width="7" height="19" rx="2" fill="${strokeColor}"/>
+      </g>
+
+      <!-- Mini Pie / Donut Chart -->
+      <g transform="translate(114, 52)">
+        <circle cx="21" cy="21" r="20" fill="#F9FAFB" stroke="${strokeColor}" stroke-width="1.5"/>
+        <!-- Pie slice -->
+        <path d="M21 21 L21 3 A18 18 0 0 1 39 21 Z" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+        <circle cx="21" cy="21" r="8" fill="${fillColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+      </g>
+
+      <!-- Report Content Lines / Progress -->
+      <line x1="54" y1="104" x2="146" y2="104" stroke="${strokeColor}" stroke-width="2" stroke-linecap="round"/>
+      <line x1="54" y1="124" x2="128" y2="114" stroke="${subStroke}" stroke-width="2" stroke-linecap="round"/>
+      <line x1="54" y1="124" x2="100" y2="124" stroke="${subStroke}" stroke-width="2" stroke-linecap="round"/>
+
+      <!-- Floating Export / Auto-Gen Badge (Right Bottom) -->
+      <g transform="translate(125, 95)" filter="drop-shadow(2px 3px 0px ${strokeColor})">
+        <circle cx="20" cy="20" r="18" fill="${accentColor}" stroke="${strokeColor}" stroke-width="2.2"/>
+        <!-- Upward Arrow & Trend Line -->
+        <path d="M12 24L18 18L22 22L28 14" stroke="${strokeColor}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M23 14H28V19" stroke="${strokeColor}" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </g>
+    </svg>`;
+  },
+
   // 5. Hero Work Portal Hub Illustration (จินตนาการศูนย์รวมระบบงาน Work Portal สไตล์ Positivus)
   heroPortalHub: () => {
     return `

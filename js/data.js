@@ -132,13 +132,28 @@ const systemsData = [
     tag: "ระบบแผนที่ GIS / ข้อมูลไฟฟ้า",
     iconBg: "#B9FF66",
     isPinned: false
+  },
+  {
+    id: "gen-report",
+    title: "ระบบการสร้างรายงาน (Report Generator)",
+    badgeTitle: ["ระบบสร้าง", "รายงาน (Report)"],
+    category: "งานโครงการ",
+    department: "ฝ่ายสาธารณูปโภค ส่วนการโยธา สำนักช่าง",
+    description: "ระบบสร้างและประมวลผลรายงานอัตโนมัติ สรุปผลการปฏิบัติงาน รายงานความคืบหน้าโครงการ และเอกสารงานช่าง เทศบาลนครระยอง",
+    url: "https://genreport-delta.vercel.app/",
+    cardTheme: "green",
+    illustrationType: "genReport",
+    status: "online",
+    tag: "ระบบสร้างรายงาน / Report",
+    iconBg: "#FFFFFF",
+    isPinned: false
   }
 ];
 
 // รายชื่อหมวดหมู่สำหรับ Filter Tabs
 const categories = [
   { id: "all", name: "ทั้งหมด" },
-  { id: "งานโครงการ", name: "โครงการและสัญญา" },
+  { id: "งานโครงการ", name: "โครงการ/สัญญา/รายงาน" },
   { id: "ไฟฟ้าสาธารณะ", name: "ไฟฟ้าสาธารณะ" },
   { id: "พัสดุและคลังวัสดุ", name: "เบิกจ่ายวัสดุ/คลัง" },
   { id: "ทางหลวงท้องถิ่น", name: "ทางหลวงท้องถิ่น (DRR)" }
