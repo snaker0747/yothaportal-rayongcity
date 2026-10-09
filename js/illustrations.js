@@ -459,6 +459,75 @@ const illustrations = {
     </svg>`;
   },
 
+  // 9. ระบบคัดกรองคำร้อง (Citizen Request Hub / Screening & Sorting)
+  requestHub: (theme = 'dark') => {
+    const strokeColor = theme === 'dark' ? '#FFFFFF' : '#191A23';
+    const accentColor = '#B9FF66';
+    const subStroke = theme === 'dark' ? '#A0A0A0' : '#4B4B4B';
+    const fillColor = theme === 'dark' ? '#2A2B36' : '#FFFFFF';
+
+    return `
+    <svg viewBox="0 0 210 170" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full max-w-[210px] max-h-[170px] transition-transform duration-500 group-hover:scale-105" preserveAspectRatio="xMidYMid meet">
+      <!-- Background Sparks -->
+      <path d="M185 25L188 35L198 38L188 41L185 51L182 41L172 38L182 35L185 25Z" fill="${strokeColor}"/>
+      <circle cx="20" cy="40" r="4" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+      <circle cx="195" cy="135" r="5" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+
+      <!-- Stacked Request Card 1 (Back) -->
+      <rect x="52" y="24" width="112" height="118" rx="14" fill="${theme === 'dark' ? '#1F202B' : '#E5E7EB'}" stroke="${strokeColor}" stroke-width="2" transform="rotate(-4 108 83)"/>
+
+      <!-- Main Request Card (Front) -->
+      <g filter="drop-shadow(3px 4px 0px ${strokeColor})">
+        <rect x="42" y="24" width="118" height="122" rx="14" fill="${fillColor}" stroke="${strokeColor}" stroke-width="2.5"/>
+      </g>
+
+      <!-- Top Tag: Request ID & Category -->
+      <rect x="54" y="36" width="46" height="11" rx="5.5" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+      <circle cx="60" cy="41.5" r="2.5" fill="${strokeColor}"/>
+      <line x1="68" y1="41.5" x2="92" y2="41.5" stroke="${strokeColor}" stroke-width="1.8" stroke-linecap="round"/>
+
+      <!-- Status Indicator Pill (Top Right) -->
+      <rect x="116" y="36" width="32" height="11" rx="5.5" fill="${theme === 'dark' ? '#191A23' : '#F3F3F3'}" stroke="${strokeColor}" stroke-width="1.2"/>
+      <circle cx="122" cy="41.5" r="2.5" fill="${accentColor}"/>
+      <line x1="128" y1="41.5" x2="142" y2="41.5" stroke="${strokeColor}" stroke-width="1.5" stroke-linecap="round"/>
+
+      <!-- Request Item 1: Checked -->
+      <g transform="translate(54, 56)">
+        <rect x="0" y="0" width="14" height="14" rx="4" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1.5"/>
+        <path d="M3.5 7L6 9.5L10.5 4.5" stroke="${strokeColor}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="22" y1="7" x2="94" y2="7" stroke="${strokeColor}" stroke-width="2" stroke-linecap="round"/>
+      </g>
+
+      <!-- Request Item 2: Sorting/Progress -->
+      <g transform="translate(54, 76)">
+        <rect x="0" y="0" width="14" height="14" rx="4" fill="${theme === 'dark' ? '#191A23' : '#F3F3F3'}" stroke="${strokeColor}" stroke-width="1.5"/>
+        <circle cx="7" cy="7" r="2.5" fill="${accentColor}"/>
+        <line x1="22" y1="7" x2="84" y2="7" stroke="${subStroke}" stroke-width="2" stroke-linecap="round"/>
+      </g>
+
+      <!-- Request Item 3: Pending -->
+      <g transform="translate(54, 96)">
+        <rect x="0" y="0" width="14" height="14" rx="4" fill="${theme === 'dark' ? '#191A23' : '#F3F3F3'}" stroke="${strokeColor}" stroke-width="1.5"/>
+        <line x1="22" y1="7" x2="72" y2="7" stroke="${subStroke}" stroke-width="2" stroke-linecap="round"/>
+      </g>
+
+      <!-- Bottom Category Dots / Priority Bar -->
+      <rect x="54" y="118" width="55" height="14" rx="5" fill="${theme === 'dark' ? '#191A23' : '#F3F3F3'}" stroke="${strokeColor}" stroke-width="1.2"/>
+      <circle cx="64" cy="125" r="3" fill="${accentColor}" stroke="${strokeColor}" stroke-width="1"/>
+      <circle cx="74" cy="125" r="3" fill="${theme === 'dark' ? '#FFFFFF' : '#191A23'}"/>
+      <circle cx="84" cy="125" r="3" fill="${subStroke}"/>
+
+      <!-- Funnel / Screening Filter Badge Floating (Right Bottom) -->
+      <g transform="translate(125, 92)" filter="drop-shadow(2px 3px 0px ${strokeColor})">
+        <circle cx="20" cy="20" r="18" fill="${accentColor}" stroke="${strokeColor}" stroke-width="2.2"/>
+        <!-- Funnel Icon -->
+        <path d="M12 13H28L22 20V26L18 28V20L12 13Z" fill="${theme === 'dark' ? '#191A23' : '#FFFFFF'}" stroke="${strokeColor}" stroke-width="1.8" stroke-linejoin="round"/>
+        <!-- Funnel input spark -->
+        <circle cx="20" cy="10" r="2" fill="${strokeColor}"/>
+      </g>
+    </svg>`;
+  },
+
   // 5. Hero Work Portal Hub Illustration (จินตนาการศูนย์รวมระบบงาน Work Portal สไตล์ Positivus)
   heroPortalHub: () => {
     return `

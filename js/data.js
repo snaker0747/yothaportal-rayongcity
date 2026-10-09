@@ -147,6 +147,21 @@ const systemsData = [
     tag: "ระบบสร้างรายงาน / Report",
     iconBg: "#FFFFFF",
     isPinned: false
+  },
+  {
+    id: "request-hub",
+    title: "ระบบคัดกรองคำร้อง (Request Hub)",
+    badgeTitle: ["ระบบคัดกรอง", "คำร้อง (Request)"],
+    category: "งานคำร้อง",
+    department: "ฝ่ายสาธารณูปโภค ส่วนการโยธา สำนักช่าง",
+    description: "ระบบบริหารจัดการและคัดกรองคำร้องทุกข์ เรื่องร้องเรียน และงานบริการสาธารณูปโภคจากประชาชนอย่างเป็นระบบและรวดเร็ว",
+    url: "https://rayong-request-hub.vercel.app/",
+    cardTheme: "dark",
+    illustrationType: "requestHub",
+    status: "online",
+    tag: "ระบบคัดกรอง / รับแจ้งคำร้อง",
+    iconBg: "#B9FF66",
+    isPinned: false
   }
 ];
 
@@ -155,6 +170,7 @@ const categories = [
   { id: "all", name: "ทั้งหมด" },
   { id: "งานโครงการ", name: "โครงการ/สัญญา/รายงาน" },
   { id: "ไฟฟ้าสาธารณะ", name: "ไฟฟ้าสาธารณะ" },
+  { id: "งานคำร้อง", name: "คัดกรองคำร้อง" },
   { id: "พัสดุและคลังวัสดุ", name: "เบิกจ่ายวัสดุ/คลัง" },
   { id: "ทางหลวงท้องถิ่น", name: "ทางหลวงท้องถิ่น (DRR)" }
 ];
